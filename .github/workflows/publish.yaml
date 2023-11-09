@@ -28,3 +28,11 @@ jobs:
           name: dgodstand/contact-form
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Save state
+        run: echo "workflowStatus=success" >> $GITHUB_STATE
+
+      - name: Set output
+        run: echo "deployedAppName=contact-form" >> $GITHUB_OUTPUT
+
+
