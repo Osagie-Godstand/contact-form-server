@@ -1,5 +1,5 @@
 DO $$ BEGIN
-    IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'contacts_recieved') THEN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'contacts_received') THEN
 -- Create the "contacts_received" table
 CREATE TABLE contacts_received (
     id UUID PRIMARY KEY,

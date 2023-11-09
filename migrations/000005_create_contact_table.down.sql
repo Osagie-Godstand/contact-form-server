@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS contacts_recieved;
+DROP TABLE IF EXISTS contacts_received;

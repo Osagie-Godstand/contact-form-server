@@ -39,7 +39,7 @@ func (r *ContactsPostgresRepository) InsertContactRequest(contact *data.ContactR
 }
 
 func (r *ContactsPostgresRepository) GetContactsReceived() ([]data.ContactsReceived, error) {
-	query := "SELECT id, email, name, phonenumber, message FROM your_contacts_table"
+	query := "SELECT id, email, name, phonenumber, message FROM contacts_received"
 	rows, err := r.DB.Query(query)
 	if err != nil {
 		return nil, err
@@ -64,7 +64,7 @@ func (r *ContactsPostgresRepository) GetContactsReceived() ([]data.ContactsRecei
 }
 
 func (r *ContactsPostgresRepository) GetContactReceivedByID(contactID uuid.UUID) (*data.ContactsReceived, error) {
-	query := "SELECT id, email, name, phonenumber, message FROM your_contacts_table WHERE id = $1"
+	query := "SELECT id, email, name, phonenumber, message FROM contacts_received WHERE id = $1"
 	row := r.DB.QueryRow(query, contactID)
 
 	var contact data.ContactsReceived
@@ -80,7 +80,7 @@ func (r *ContactsPostgresRepository) GetContactReceivedByID(contactID uuid.UUID)
 }
 
 func (r *ContactsPostgresRepository) DeleteContactReceivedByID(contactID uuid.UUID) error {
-	query := "DELETE FROM your_contacts_table WHERE id = $1"
+	query := "DELETE FROM contacts_received WHERE id = $1"
 	result, err := r.DB.Exec(query, contactID)
 	if err != nil {
 		return err

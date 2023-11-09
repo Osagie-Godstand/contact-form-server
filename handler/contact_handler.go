@@ -15,7 +15,6 @@ import (
 )
 
 type ContactHandler struct {
-	DB                 *sql.DB
 	contactsRepository db.ContactsRepository
 }
 
@@ -68,7 +67,7 @@ func sendEmail(message string) error {
 func (r *ContactHandler) GetContactsHandler(context *fiber.Ctx) error {
 	contactsinList, err := r.contactsRepository.GetContactsReceived()
 	if err != nil {
-		return fiber.ErrBadRequest
+		return fiber.ErrInternalServerError
 	}
 	context.Status(http.StatusOK).JSON(&fiber.Map{"contacts": contactsinList})
 	return nil
