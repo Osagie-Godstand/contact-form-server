@@ -1,8 +1,8 @@
 # Use an official Golang runtime as a parent image
 FROM golang:1.20.3-alpine
 
-# Set the working directory to /app
-WORKDIR /app
+# Set the working directory to /api
+WORKDIR /api
 
 # Copy go.mod and go.sum files to the container
 COPY go.mod ./
@@ -20,5 +20,5 @@ RUN go build -o bin/api ./cmd/sendit
 EXPOSE 8080
 
 # Set the entry point of the container to the executable
-CMD ["./bin/app"]
+CMD ["./bin/api"]
 
