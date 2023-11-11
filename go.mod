@@ -1,4 +1,4 @@
-module github.com/Osagie-Godstand/contact-form
+module github.com/Osagie-Godstand/contact-form-server
 
 go 1.21
 

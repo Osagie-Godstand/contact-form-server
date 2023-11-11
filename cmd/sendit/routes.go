@@ -3,8 +3,8 @@ package main
 import (
 	"database/sql"
 
-	"github.com/Osagie-Godstand/contact-form/db"
-	"github.com/Osagie-Godstand/contact-form/handler"
+	"github.com/Osagie-Godstand/contact-form-server/db"
+	"github.com/Osagie-Godstand/contact-form-server/handler"
 	"github.com/gofiber/fiber/v2"
 )
 

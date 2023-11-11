@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/Osagie-Godstand/contact-form/db"
+	"github.com/Osagie-Godstand/contact-form-server/db"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )

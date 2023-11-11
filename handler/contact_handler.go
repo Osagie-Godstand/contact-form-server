@@ -8,8 +8,8 @@ import (
 	"net/smtp"
 	"os"
 
-	"github.com/Osagie-Godstand/contact-form/db"
-	"github.com/Osagie-Godstand/contact-form/internal/data"
+	"github.com/Osagie-Godstand/contact-form-server/db"
+	"github.com/Osagie-Godstand/contact-form-server/internal/data"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 )

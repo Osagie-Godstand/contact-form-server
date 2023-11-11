@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/Osagie-Godstand/contact-form/internal/data"
+	"github.com/Osagie-Godstand/contact-form-server/internal/data"
 	"github.com/google/uuid"
 )
 
