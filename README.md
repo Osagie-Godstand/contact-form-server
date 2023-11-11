@@ -15,3 +15,4 @@ Enabling inquiries
 - DB_NAME=
 - DB_SSLMODE=
 - SMTP_PASSWORD=
+- SMTP_FROM_EMAIL= 
