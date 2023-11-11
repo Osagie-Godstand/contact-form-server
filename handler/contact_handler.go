@@ -39,7 +39,7 @@ func (r *ContactHandler) CreateContactHandler(context *fiber.Ctx) error {
 	}
 
 	// Send email via SMTP
-	if err := sendEmail(contact.Message); err != nil {
+	if err := sendEmail(contact.Name, contact.Email, contact.PhoneNumber, contact.Message); err != nil {
 		log.Println("Failed to send email:", err)
 	}
 
@@ -47,8 +47,8 @@ func (r *ContactHandler) CreateContactHandler(context *fiber.Ctx) error {
 	return nil
 }
 
-func sendEmail(message string) error {
-	from := "dgodstand@gmail.com"
+func sendEmail(name, email, phoneNumber, message string) error {
+	from := os.Getenv("SMTP_FROM_EMAIL")
 	to := "dgodstand@gmail.com"
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
@@ -57,7 +57,7 @@ func sendEmail(message string) error {
 	auth := smtp.PlainAuth("", from, smtpPassword, smtpHost)
 
 	subject := "CONTACT_REQUEST"
-	body := fmt.Sprintf("Message: %s", message)
+	body := fmt.Sprintf("Name: %s\r\nEmail: %s\r\nPhone Number: %s\r\nMessage: %s", name, email, phoneNumber, message)
 
 	msg := []byte(fmt.Sprintf("To: %s\r\nSubject: %s\r\n\r\n%s", to, subject, body))
 
