@@ -14,7 +14,7 @@ func initializeRouter(dbConn *sql.DB) *fiber.App {
 	contactsRepository := db.NewPostgresContactsRepository(dbConn)
 	contactHandler := handler.NewContactRequestHandler(contactsRepository)
 
-	app.Post("/create_contact", contactHandler.CreateContactHandler)
+	app.Post("/send_contact", contactHandler.CreateContactHandler)
 	app.Get("/get_contacts", contactHandler.GetContactsHandler)
 	app.Get("/get_contact/:id", contactHandler.GetContactByIDHandler)
 	app.Delete("/delete_contact/:id", contactHandler.DeleteContactByIDHandler)

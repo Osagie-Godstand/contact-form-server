@@ -11,10 +11,10 @@ type ContactRequest struct {
 
 type ContactsReceived struct {
 	ID          uuid.UUID `json:"id"`
-	Email       *string   `json:"email"`
-	Name        *string   `json:"name"`
-	PhoneNumber *string   `json:"phonenumber"`
-	Message     *string   `json:"message"`
+	Email       string    `json:"email"`
+	Name        string    `json:"name"`
+	PhoneNumber string    `json:"phonenumber"`
+	Message     string    `json:"message"`
 }
 
 func NewUUID() uuid.UUID {

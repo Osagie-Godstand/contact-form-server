@@ -3,10 +3,10 @@ DO $$ BEGIN
 -- Create the "contacts_received" table
 CREATE TABLE contacts_received (
     id UUID PRIMARY KEY,
-    email VARCHAR(255),
-    name VARCHAR(255),
-    phonenumber VARCHAR(20),
-    message VARCHAR(255)
+    email VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    phonenumber VARCHAR(20) NOT NULL,
+    message TEXT NOT NULL
 );
   END IF;
 END $$;
